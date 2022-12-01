@@ -19,18 +19,12 @@ jobs:
           java-version: '11'
 
       - run: flutter --version
-      - run: |
-          cd example_app
-          flutter packages get
-      - run: |
-          cd example_app
-          flutter test
-      - run:  |
-          cd example_app
-          flutter build apk
-      - run: |
-          cd example_app
-          flutter build appbundle
+      - run: flutter packages get
+      - run: flutter test
+      - run: flutter build apk
+      - run: flutter build appbundle
+
+
   build2:
     name: Build and Test on IOS
     runs-on: macos-latest
@@ -45,13 +39,7 @@ jobs:
           channel: 'stable'
 
       - run: flutter --version
-      - run: |
-          cd example_app
-          flutter packages get
-      - run: |
-          cd example_app
-          flutter test
-      - run: |
-          cd example_app
-          flutter build ios --release --no-codesign
+      - run: flutter packages get
+      - run: flutter test
+      - run: flutter build ios --release --no-codesign
   
