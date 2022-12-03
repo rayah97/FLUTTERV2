@@ -7,7 +7,7 @@ on:
         required: true
         type: choice
         options:
-        - "3.11.0"
+        - "3.3.9"
         - "3.10.0"
         - "2.1.0"
 jobs:
@@ -67,7 +67,7 @@ jobs:
       - name: Install Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version:  ${{ inputs.flutterversion}}
+          flutter-version: ${{ inputs.flutterversion}}
           channel: 'stable'
 
       - run: flutter --version
