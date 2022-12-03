@@ -10,6 +10,14 @@ on:
         - "3.3.9"
         - "3.10.0"
         - "2.1.0"
+    javaversion:
+      description: ' Java Versions'
+      required: false
+      type: choice
+      options:
+        - "10"
+        - "11"
+        - "9"
 jobs:
   build1:
     name: Build and Test on Android
@@ -26,7 +34,7 @@ jobs:
       - name: Install Java
         uses: actions/setup-java@v1
         with:
-          java-version: '11'
+          java-version: ${{ inputs.javaversion}}
 
       - run: flutter --version
       - run: flutter packages get
